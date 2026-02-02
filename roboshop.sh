@@ -34,6 +34,10 @@ fi
 
 echo "IP Address is :$IP"
 
+echo "DEBUG:"
+echo "instance='$instance'"
+echo "DOMAIN_NAME='$DOMAIN_NAME'"
+echo "RECORD_NAME='$RECORD_NAME'"
 aws route53 change-resource-record-sets \
   --hosted-zone-id $ZONE_ID \
   --change-batch '{
