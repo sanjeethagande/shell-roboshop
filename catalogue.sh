@@ -55,7 +55,7 @@ cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 dnf install mongodb-mongosh -y
 VALIDATE $? "Installing"
 
-INDEX=$(mongosh --host $MONGODB_HOST --quit --eval 'db.getMongo().getNames.().indexof("catalogue")')
+INDEX=$(mongosh --host $MONGODB_HOST --quiet --eval 'db.getMongo().getNames.().indexof("catalogue")')
 
 if [ $INDEX -le 0 ]; then
 mongosh --host $MONGODB_HOST </app/db/master-data.js
@@ -65,6 +65,7 @@ echo -e "products already loaded...$Y SKIPPING $N"
 fi
 
 systemctl restart catalogue
+VALIDATE $? "restarted"
 
 # mongosh --host $MONGODB_HOST
 # VALIDATE $? ""
