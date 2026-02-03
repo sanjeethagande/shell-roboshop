@@ -19,7 +19,7 @@ if [ $? -ne 0 ]; then
 useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
 VALIDATE $? "Creating system user"
 else
- echo "User already exist.. $Y SKIPPING $N"
+ echo -e "User already exist.. $Y SKIPPING $N"
  fi
 
 mkdir -p /app 
@@ -57,7 +57,7 @@ VALIDATE $? "Installing"
 
 INDEX=$(mongosh --host $MONGODB_HOST --quit --eval 'db.getMongo().getNames.().indexof("catalogue")')
 
-if[ $INDEX -le 0]; then
+if[ $INDEX -le 0 ]; then
 
 mongosh --host $MONGODB_HOST </app/db/master-data.js
 VALIDATE $? "Loading Products"
