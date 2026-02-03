@@ -57,8 +57,7 @@ VALIDATE $? "Installing"
 
 INDEX=$(mongosh --host $MONGODB_HOST --quit --eval 'db.getMongo().getNames.().indexof("catalogue")')
 
-if[ $INDEX -le 0 ]; then
-
+if [ $INDEX -le 0 ]; then
 mongosh --host $MONGODB_HOST </app/db/master-data.js
 VALIDATE $? "Loading Products"
 else
