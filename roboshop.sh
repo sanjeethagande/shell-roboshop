@@ -23,6 +23,7 @@ IP=$(
   --output text
 )
 RECORD_NAME="$DOMAIN_NAME"  #mongodb.sanjeethadevops.online
+else
 IP=$( 
     aws ec2 describe-instances \
   --instance-ids $INSTANCE_ID \
@@ -56,6 +57,6 @@ aws route53 change-resource-record-sets \
     ]
   }'
 
-  echo "record updatred for $instance"
+  echo "record updated for $instance"
 
 done
