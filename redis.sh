@@ -1,8 +1,5 @@
 #!/bin/bash
 
-SCRIPT_DIR=$PWD
-REDIS_HOST="redis.sanjeethadevops.online"
-
 source ./common.sh
 
 dnf module disable redis -y &>>$LOGS_FILE

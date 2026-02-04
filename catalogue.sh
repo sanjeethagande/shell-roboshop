@@ -67,17 +67,3 @@ fi
 systemctl restart catalogue
 VALIDATE $? "restarted"
 
-# mongosh --host $MONGODB_HOST
-# VALIDATE $? ""
-
-# show dbs
-# VALIDATE $? "Showing Databases"
-
-# use catalogue
-# VALIDATE $? "catalogue table"
-
-# show collections
-# VALIDATE $? "showing collections"
-
-# db.products.find()
-# VALIDATE $? "catalogue products"
