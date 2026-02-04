@@ -5,7 +5,7 @@ source ./common.sh
 MYSQL_HOST="mysql.sanjeethadevops.online"
 
 dnf install maven -y &>>LOGS_FILE 
-ALIDATE $? "installing Maven"
+VALIDATE $? "installing Maven"
 
 if [ $? -ne 0 ]; then
 useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
