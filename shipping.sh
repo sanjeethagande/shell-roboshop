@@ -43,10 +43,12 @@ systemctl start shipping
 dnf install mysql -y 
 VALIDATE $? "Installing mysql"
 
+mysql -h $MYSQL_HOST -uroot -pRoboShop@1 -e 'use cities'
+if [ ];l then 
 mysql -h $MYSQL_HOST -uroot -pRoboShop@1 < /app/db/schema.sql
-
 mysql -h $MYSQL_HOST -uroot -pRoboShop@1 < /app/db/app-user.sql 
-
 mysql -h $MYSQL_HOST -uroot -pRoboShop@1 < /app/db/master-data.sql
+else
+  echo -e "data is alreday loaded..$Y..SKIPPING.$N"
 
 systemctl restart shipping
