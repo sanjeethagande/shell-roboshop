@@ -1,8 +1,8 @@
 #!/bin/bash
 
-$MYSQL_HOST="mysql.sanjeethadevops.online"
-
 source ./common.sh
+
+MYSQL_HOST="mysql.sanjeethadevops.online"
 
 dnf install maven -y &>>LOGS_FILE 
 ALIDATE $? "installing Maven"
