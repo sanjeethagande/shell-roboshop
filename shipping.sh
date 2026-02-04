@@ -34,7 +34,14 @@ cd /app
 mvn clean package 
 mv target/shipping-1.0.jar shipping.jar 
 
+
 cp $SCRIPT_DIR/shipping.service /etc/systemd/system/shipping.service
+
+systemctl daemon-reload
+systemctl enable shipping 
+systemctl start shipping
+dnf install mysql -y 
+VALIDATE $? "Installing mysql"
 
 mysql -h $MYSQL_HOST -uroot -pRoboShop@1 < /app/db/schema.sql
 
