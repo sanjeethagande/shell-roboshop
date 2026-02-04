@@ -25,8 +25,8 @@ cd /app
 rm -rf /app/*
 VALIDATE $? "Removing existing code"
 
-unzip /tmp/user.zip
-VALIDATE $? "unzipping user code"
+unzip /tmp/shipping.zip
+VALIDATE $? "unzipping shipping code"
 
 cd /app 
 mvn clean package 
