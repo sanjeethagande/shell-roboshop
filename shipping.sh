@@ -2,7 +2,9 @@
 
 source ./common.sh
 
+SCRIPT_DIR=$PWD
 MYSQL_HOST="mysql.sanjeethadevops.online"
+
 
 dnf install maven -y &>>LOGS_FILE 
 VALIDATE $? "installing Maven"
