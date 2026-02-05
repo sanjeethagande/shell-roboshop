@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SG_ID="sg-076ec9ad23dab2b28"
+SG_ID="sg-0cbd13a547e558c9a"
 AMI_ID="ami-0220d79f3f480ecf5"
 ZONE_ID="Z09377683CDJHFYUS3OAB"
 DOMAIN_NAME="sanjeethadevops.online"
