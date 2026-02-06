@@ -2,13 +2,13 @@
 
 source ./common.sh
 
-dnf install mysql-server -y
+dnf install mysql-server -y &>>$LOGS_FILE
+VALIDATE $? "Install MySQL server"
 
-systemctl enable mysqld
-VALIDATE $? "enabling Mysql server"
-
+systemctl enable mysqld &>>$LOGS_FILE
 systemctl start mysqld  
-VALIDATE $? "starting  Mysql server"
+VALIDATE $? "Enable and start mysql"
 
+# get the password from user
 mysql_secure_installation --set-root-pass RoboShop@1
-VALIDATE $? "Installing Mysql server"
+VALIDATE $? "Setup root password"
